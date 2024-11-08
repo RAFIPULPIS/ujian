@@ -32,14 +32,47 @@ class Apa extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Data ditambahkann boskuu")),
+                  SnackBar(content: Text("Data disimpan boskuu")),
                 );
               },
               child: Text("Simpan"),
             ),
+            SizedBox(height: 20,),
+            ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Data dikirim")),
+                );
+              },
+              child: Text("kirim"),
+            ),
+             SizedBox(height: 20,),
+            Container(
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/home');
+                      },
+                      child: Icon(Icons.arrow_back),
+                    ),
+                    SizedBox(width: 20,),
+                     FloatingActionButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/last');
+                      },
+                      child: Icon(Icons.arrow_right_alt_rounded),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
     );
+    
   }
 }

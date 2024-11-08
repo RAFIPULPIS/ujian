@@ -7,12 +7,41 @@ class Last extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("data")),
-      body: Center(
-        child: Column(
-          
-        ),
-      )
-      
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView(
+              children: List.generate(
+                5,
+                (index) => ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("rafi andika"),
+                  subtitle: Text("gokill"),
+                ),
+              ),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+                child: Text("home page"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/apa');
+                },
+                child: Text("Tambah data"),
+              ),
+            ],
+          ),
+          SizedBox(height: 20), 
+        ],
+      ),
     );
   }
 }
+

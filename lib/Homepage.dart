@@ -11,13 +11,18 @@ class Homepage extends StatelessWidget {
         style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blue,
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Icon(Icons.wallet_giftcard,
+            size: 200,
+            color: Colors.blue,
+            ),
             Text(
-              "Selamat datang ",
+              "Selamat datang di aplikasi penambahan data ",
               style: TextStyle(fontSize: 18),
             ),
             SizedBox(height: 40,),
@@ -32,7 +37,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/last');
               },
-              child: Text('Ke Halaman kedua'),
+              child: Text('data'),
             ),
           ],
         ),
